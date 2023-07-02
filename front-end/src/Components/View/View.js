@@ -1,6 +1,6 @@
 import React ,{useState,useEffect} from 'react';
 import './View.css';
-import axios from 'axios';
+import axios from '../../axios';
 
 function View() {
 
@@ -10,7 +10,7 @@ function View() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:7777/product/' + searchParams)
+      .get('product/' + searchParams)
       .then((response) => {
         console.log(response.data);
         setProduct(response.data);
@@ -40,8 +40,8 @@ function View() {
         </div>
         <div className="contactDetails">
           <p>Seller details</p>
-          <p>No name</p>
-          <p>1234567890</p>
+          <p>demo</p>
+          <p>123456789</p>
         </div>
       </div>
       

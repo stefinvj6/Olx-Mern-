@@ -2,13 +2,15 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const cartSchema = new Schema({
-    User:{
+    user:{
         type:mongoose.Types.ObjectId,
-        ref:'user'
+        ref:'user',
+        // required:true
     },
     wishlist:{
         type:mongoose.Types.ObjectId,
-        ref:'product'
+        ref:'product',
+        required:true
     }
 },{ strictPopulate: false })
 

@@ -1,13 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import './Cart.css'
-import axios from 'axios';
+import axios from '../../axios';
 import Heart from '../../assets/Heart';
 
 
+
 function Cart() {
+
+  if(!document.cookie){
+    window.location.href='/signup'
+    // return
+  }
+  const tokenCookie=document.cookie
+  const tokenCookieSplit = tokenCookie.split("=")
+  const token =tokenCookieSplit[1]
+  console.log(token)
   const [wishlist, setWishlist] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:7777/cart")
+
+    axios.get("cart" ,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
     .then((response) => {
       console.log(response.data)
       setWishlist(response.data)
@@ -18,7 +33,11 @@ function Cart() {
 
   const handleCartDelete = (id) =>{
     setWishlist(wishlist.filter((obj)=>obj._id !== id))
-    axios.delete(`http://localhost:7777/cart/${id}`)
+    axios.delete(`cart/${id}`,{
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
     .then((response) => {
       console.log(response)
     }).catch((err) => {

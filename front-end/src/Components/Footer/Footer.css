@@ -1,5 +1,5 @@
 .footerParentDiv {
-  width: 100vw;
+  width: 100%;
 }
 .footerParentDiv .content {
   display: flex;
@@ -24,4 +24,36 @@
 
 .footerParentDiv .footer p {
   margin: 0;
+}
+
+/* Responsive */
+
+@media screen and (max-width:416px){
+  .footerParentDiv{
+    width: 100%;
+  }
+  .content{
+    width: 100%;
+    float: left;
+  }
+  .div1 .div2 .div3{
+    width: 32%;
+  }
+  .div1 p{
+    margin-left: 20px;
+  }
+  .div2 p{
+    margin-left: 20px;
+  }
+  .div3 p{
+    margin-left: 40px;
+  }
+  .div2 ul{
+    margin-left: -20px;
+    margin-top: 30px;
+  }
+  .div3 ul{
+    margin-left: 20px;
+    margin-top: 30px;
+  }
 }

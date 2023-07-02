@@ -3,7 +3,7 @@ import Logo from '../../olx-logo.png';
 import './Signup.css';
 import { Link, useNavigate } from 'react-router-dom';
 
-import axios from 'axios';
+import axios from '../../axios';
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function Signup() {
 
   const handleSubmit = (e)=>{
     e.preventDefault()
-    axios.post("http://localhost:7777/user",{username,email,password,number})
+    axios.post("/user",{username,email,password,number})
     .then((response) => {
       console.log(response.data)
       navigate('/login')

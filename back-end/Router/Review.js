@@ -2,7 +2,7 @@ const express  = require("express")
 const review = require("../Model/ReviewSchema")
 const router = express.Router()
 const product = require("../Model/ProductSchema")
-
+const authorizeUser = require("../middlewares/AuthMiddleware")
 
 router.get("/",async(req,res)=>{
     try {
@@ -49,14 +49,5 @@ router.get("/user/:id",async(req,res)=>{
           res.send(error)
       }
     });
-
-router.delete("/:id",async(req,res)=>{
-    try {
-        const getReview = await review.findByIdAndDelete(req.params.id)
-        res.json(getReview)
-    } catch (error) {
-        res.send(error)
-    }
-})
 
 module.exports = router

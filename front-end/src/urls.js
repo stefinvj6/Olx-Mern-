@@ -1,0 +1,6 @@
+export const baseUrl = 'http://localhost:7777/'
+export const signup ='/user'
+export const login ='/user/login'
+export const product ='/product'
+export const userProduct = '/product/user/{_id}'
+export const cart ='/cart'

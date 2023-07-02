@@ -15,17 +15,29 @@
 }
 .bannerChildDiv .banner {
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 .bannerChildDiv .banner img{
-  width: 100vw;
+  width: 100%;
 }
 
-@media only screen and (max-width: 700px) {
+/* @media only screen and (max-width: 700px) {
   .otherQuickOptions {
     display: none;
   }
   .bannerChildDiv .banner {
     position: relative;
   }
+} */
+@media screen and (max-width: 416px) {
+  .otherQuickOptions {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 10px;
+  }
+  .bannerChildDiv .banner {
+    position: relative;
+  }
+
 }
+

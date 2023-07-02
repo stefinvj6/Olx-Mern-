@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import './Create.css';
 import Header from '../Header/Header';
-import axios from 'axios';
+import axios from '../../axios';
 
 const Create = () => {
   const [title, setTitle] = useState('');
@@ -13,7 +13,15 @@ const Create = () => {
 
   const handlesubmit = (e)=>{
     e.preventDefault()
-    axios.post('http://localhost:7777/product',{title,description,price,image,location,categories})
+    const tokenCookie = document.cookie;
+    const tokenCookieSplit = tokenCookie.split("=");
+    const token = tokenCookieSplit[1];
+    console.log(token);
+    axios.post('/product',{title,description,price,image,location,categories},{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
     .then((response) => {
       console.log(response.data)
     }).catch((err) => {

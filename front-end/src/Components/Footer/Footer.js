@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className="footerParentDiv">
       <div className="content">
-        <div>
+        <div className='div1'>
           <div className="heading">
             <p>POPULAR LOCATIONS</p>
           </div>
@@ -19,20 +19,20 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div>
+        <div className='div2'>
           <div className="heading">
             <p>ABOUT US</p>
           </div>
           <div className="list">
             <ul>
-              <li>About OLX Group</li>
+              <li>AboutGroup</li>
               <li>Careers</li>
               <li>Contact Us</li>
               <li>OLXPeople</li>
             </ul>
           </div>
         </div>
-        <div>
+        <div className='div3'>
           <div className="heading">
             <p>OLX</p>
           </div>

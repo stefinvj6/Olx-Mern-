@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Logo from '../../olx-logo.png';
 import './Login.css';
-import axios from 'axios';
+import axios from '../../axios';
 import { Link } from 'react-router-dom';
 
 function Login() {
@@ -11,10 +11,14 @@ function Login() {
 
   const handleSubmit = (e)=>{
     e.preventDefault()
-    axios.post("http://localhost:7777/user/login",{username,password})
+    axios.post("user/login",{username,password})
     .then((response) => {
       console.log(response.data)
+      let comparisionResult=response.data.comparisionResult
+      const token =response.data.token
+      document.cookie=`token=${token}`
       window.location.href = '/'
+      
     }).catch((err) => {
       console.log(err)      
     });
