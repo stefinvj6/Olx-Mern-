@@ -18,7 +18,7 @@ function View() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [searchParams]);
 
   return (
     <>

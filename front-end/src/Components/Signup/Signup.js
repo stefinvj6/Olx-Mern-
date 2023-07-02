@@ -26,7 +26,7 @@ export default function Signup() {
   return (
     <div>
       <div className="signupParentDiv">
-        <img width="200px" height="200px" src={Logo}></img>
+        <img width="200px" height="200px" src={Logo} alt=''></img>
         <form onSubmit={handleSubmit} >
           <label htmlFor="fname">Username</label>
           <br />
@@ -80,7 +80,7 @@ export default function Signup() {
           <button>Signup</button>
         </form>
         <Link to={'/login'}>
-        <a>Login</a>
+        login
         </Link>
       </div>
     </div>

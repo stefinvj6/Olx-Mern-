@@ -29,7 +29,7 @@ function Cart() {
     }).catch((err) => {
       console.log(err)
     });
-  }, []);
+  }, [token]);
 
   const handleCartDelete = (id) =>{
     setWishlist(wishlist.filter((obj)=>obj._id !== id))

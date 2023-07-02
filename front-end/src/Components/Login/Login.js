@@ -14,7 +14,6 @@ function Login() {
     axios.post("user/login",{username,password})
     .then((response) => {
       console.log(response.data)
-      let comparisionResult=response.data.comparisionResult
       const token =response.data.token
       document.cookie=`token=${token}`
       window.location.href = '/'
@@ -27,7 +26,7 @@ function Login() {
   return (
     <div>
       <div className="loginParentDiv">
-        <img width="200px" height="200px" src={Logo}></img>
+        <img width="200px" height="200px" src={Logo} alt=''></img>
         <form onSubmit={handleSubmit}>
           <label htmlFor="fname">Username</label>
           <br />
@@ -57,7 +56,7 @@ function Login() {
           <button>Login</button>
         </form>
         <Link to={'/signup'} >
-        <a>Signup</a>
+        Signup
         </Link>
       </div>
     </div>
