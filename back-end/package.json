@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "bulid":"npm i"
+    "build":"npm i"
   },
   "keywords": [],
   "author": "",
